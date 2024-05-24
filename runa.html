@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Icon Menu</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Sans+MS:wght@400;700&display=swap">
+  <style>
+    body {
+      font-family: 'Comic Sans MS', sans-serif;
+      color: #fff;
+    }
+    .message {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #fff;
+    }
+    .menuToggle {
+      cursor: pointer;
+      font-size: 2em;
+      margin-bottom: 20px;
+      background: #444;
+      padding: 10px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="message">Você vê um símbolo à sua frente</div>
+  <ul class="menu">
+    <div class="menuToggle"><ion-icon name="add-outline"></ion-icon></div>
+    <li style="--i: 0; --clr: #ff2972">
+      <a href="geoparque.html?section=1" class="runa-link"><ion-icon name="map-outline"></ion-icon></a>
+    </li>
+    <li style="--i: 1; --clr: #fee800">
+      <a href="geoparque.html?section=2" class="runa-link"><ion-icon name="compass-outline"></ion-icon></a>
+    </li>
+    <li style="--i: 2; --clr: #04fc43">
+      <a href="geoparque.html?section=3" class="runa-link"><ion-icon name="earth-outline"></ion-icon></a>
+    </li>
+    <li style="--i: 3; --clr: #fe00f1">
+      <a href="geoparque.html?section=4" class="runa-link"><ion-icon name="trail-sign-outline"></ion-icon></a>
+    </li>
+    <li style="--i: 4; --clr: #00b0fe">
+      <a href="geoparque.html?section=5" class="runa-link"><ion-icon name="key-outline"></ion-icon></a>
+    </li>
+    <li style="--i: 5; --clr: #fea600">
+      <a href="geoparque.html?section=6" class="runa-link"><ion-icon name="bonfire-outline"></ion-icon></a>
+    </li>
+    <li style="--i: 6; --clr: #a529ff">
+      <a href="geoparque.html?section=7" class="runa-link"><ion-icon name="water-outline"></ion-icon></a>
+    </li>
+    <li style="--i: 7; --clr: #01bdab">
+      <a href="geoparque.html?section=8" class="runa-link"><ion-icon name="planet-outline"></ion-icon></a>
+    </li>
+  </ul>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+
+  <script>
+    let menuToggle = document.querySelector(".menuToggle");
+    let menu = document.querySelector(".menu");
+    let message = document.querySelector(".message");
+
+    menuToggle.onclick = function () {
+      menu.classList.toggle("active");
+      if (menu.classList.contains("active")) {
+        message.textContent = "Escolha uma das runas";
+      } else {
+        message.textContent = "Você vê um símbolo à sua frente";
+      }
+    };
+  </script>
+</body>
+</html>

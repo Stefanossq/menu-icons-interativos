@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geoparque de Caçapava</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Sans+MS:wght@400;700&display=swap">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #161616;
+      color: #fff;
+      font-family: 'Comic Sans MS', sans-serif;
+      text-align: center;
+    }
+    .message {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .geopark-info {
+      margin: 20px;
+      text-align: left;
+      max-width: 800px;
+    }
+    .geopark-info img {
+      max-width: 100%;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .geopark-info p {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="message">Explore o Geoparque de Caçapava</div>
+  <div class="geopark-info" id="info">
+    <!-- Conteúdo será carregado dinamicamente -->
+  </div>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const section = urlParams.get('section');
+
+    const info = {
+      1: {
+        title: "Formações Geológicas",
+        text: "As formações geológicas de Caçapava são únicas...",
+        image: "formacoes-geologicas.jpg"
+      },
+      2: {
+        title: "Fósseis",
+        text: "Descubra os incríveis fósseis encontrados no Geoparque...",
+        image: "fosseis.jpg"
+      },
+      3: {
+        title: "Trilhas e Aventuras",
+        text: "Explore as trilhas e aventuras que o Geoparque oferece...",
+        image: "images/trilhas-aventuras.jpg"
+      },
+      4: {
+        title: "História e Cultura",
+        text: "Conheça a rica história e cultura da região...",
+        image: "historia-cultura.jpg"
+      },
+      5: {
+        title: "Fauna e Flora",
+        text: "A diversidade de fauna e flora do Geoparque é impressionante...",
+        image: "fauna-flora.jpg"
+      },
+      6: {
+        title: "Atividades Educacionais",
+        text: "Participe de atividades educacionais e aprenda mais sobre geologia...",
+        image: "atividades-educacionais.jpg"
+      },
+      7: {
+        title: "Geoconservação",
+        text: "Saiba mais sobre os esforços de geoconservação na área...",
+        image: "geoconservacao.jpg"
+      },
+      8: {
+        title: "Visitas Guiadas",
+        text: "Agende uma visita guiada para uma experiência completa...",
+        image: "visitas-guiadas.jpg"
+      }
+    };
+
+    const content = info[section] || info[1];
+
+    const infoContainer = document.getElementById('info');
+    infoContainer.innerHTML = `
+      <h2>${content.title}</h2>
+      <img src="${content.image}" alt="${content.title}">
+      <p>${content.text}</p>
+    `;
+  </script>
+</body>
+</html>
